@@ -1,8 +1,22 @@
 class Solution {
     public int removePalindromeSub(String s) {
-        if (s.isEmpty()) return 0;
-        String rev = new StringBuilder(s).reverse().toString();
-        if (s.equals(rev)) return 1;
+        if(s.length()==0) return 0;
+        if(isPalindrome(s)){
+            return 1;
+        }
         return 2;
+
     }
+    public boolean isPalindrome(String s){
+        int left=0;
+        int right = s.length()-1;
+        while(right>left){
+            if(s.charAt(left)!=s.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    } 
 }

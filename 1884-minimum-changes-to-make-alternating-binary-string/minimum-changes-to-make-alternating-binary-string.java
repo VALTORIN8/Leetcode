@@ -8,6 +8,6 @@ class Solution {
                 count++;
             }
         }
-        return Math.min(count, n - count);//ye aa gya
+        return Math.min(count, n - count);
     }
 }

@@ -6,4 +6,4 @@ class Solution {
         BigInteger sum = n1.add(n2);
         return sum.toString(2);
     }
-}
+}      

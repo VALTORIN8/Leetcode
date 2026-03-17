@@ -1,4 +1,4 @@
-
+#include <stdlib.h>
 
 int getlastdigit(int n){
     return n % 10;

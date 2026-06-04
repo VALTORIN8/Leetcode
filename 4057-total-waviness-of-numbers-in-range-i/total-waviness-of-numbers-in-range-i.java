@@ -17,6 +17,6 @@ class Solution {
             if (curr > prev && curr > next) count++; // peak
             else if (curr < prev && curr < next) count++; // valley
         }
-        return count;
-    }
-}
+        return count;//humne jo kiya 2 method bante 
+    }//bola tha method se hoga 
+}//ye leetcode ko bolna chhaiye bhaago yha se chamkadar or penguin zanwar donolol 😂 

@@ -8,7 +8,7 @@ int sumOfLeftLeaves(struct TreeNode* root) {
     else
         sum += sumOfLeftLeaves(root->left);
     
-    sum += sumOfLeftLeaves(root->right);//this was missing
+    sum += sumOfLeftLeaves(root->right);
     
     return sum;
 }

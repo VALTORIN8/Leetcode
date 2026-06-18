@@ -1,7 +1,7 @@
 class Solution {
-    public double angleClock(int hour, int minutes) {//ye hoga dekh ?//aaram se /oki
+    public double angleClock(int hour, int minutes) {
         double result=0.0;
-        double angle1=(hour%12)*30+minutes*0.5;//1 minuit me hour kitna degree move hoga?//0.5 (ai)
+        double angle1=(hour%12)*30+minutes*0.5;
 
         double angle2=minutes*6;
         result=Math.abs(angle1-angle2);

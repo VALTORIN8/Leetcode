@@ -1,17 +1,21 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int[] freq = new int[60001];
-
-        for (int num : nums) {
-            freq[num + 30000]++;
-        }
-
-        for (int i = 0; i < freq.length; i++) {
-            if (freq[i] == 1) {
-                return i - 30000;
+        for(int i = 0; i < nums.length; i++) {
+            int count = 0;
+            //c h ye?//ha ye bhi chalega
+            for(int j = 0; j < nums.length; j++) {
+                if(nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+            
+            if(count == 1) {
+                return nums[i];
             }
         }
-
-        return -1;
+        
+        return -1; 
     }
 }
+//int singleNumber(int* nums, int numsSize) {
+

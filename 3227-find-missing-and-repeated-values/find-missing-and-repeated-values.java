@@ -6,8 +6,7 @@ class Solution {
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                arr[grid[i][j]]++; 
-            }
-            //yha kya error?no idea//princesssss for loop ke baad (:)
+            }   
         }
         for(int i=1;i<(n*n)+1;i++){
             if(arr[i]==0){

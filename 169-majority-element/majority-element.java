@@ -10,7 +10,6 @@ class Solution {
                 count++;
             }
             else count--;
-            
         }
         return a;
     }

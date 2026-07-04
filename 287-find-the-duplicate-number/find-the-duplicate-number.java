@@ -1,33 +1,16 @@
  class Solution {
     public int findDuplicate(int[] nums) {
-    
+    //set jaise hi h ye
         boolean arr[]=new boolean[nums.length];//set banna tha maine hashset bana diya //ohh
-        for(int i=0;i<nums.length;i++){
-            if(arr[nums[i]]){
-                return nums[i];
+        for(int num : nums){
+            if(arr[num]){
+                return num;
             }
             else {
-                arr[nums[i]]=true;
+                arr[num]=true;
             }
             
         }
         return -1;
     }
 } 
-/*class Solution {//phele wala
-    public int findDuplicate(int[] nums) {
-        int n = nums.length;
-        Set<Integer> set = new HashSet<>();
-        int duplicate=0;
-        for(int i=0;i<n;i++){
-            if(set.contains(nums[i])){
-                duplicate=nums[i];
-            }
-            else{
-                set.add(nums[i]);
-            }
-        }
-        return duplicate;
-        
-    }
-}*/

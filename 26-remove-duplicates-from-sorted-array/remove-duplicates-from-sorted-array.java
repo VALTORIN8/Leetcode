@@ -1,17 +1,14 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int count=0;//ye
-        Set<Integer> set = new HashSet<>();//time jyada liya hmm sirf hash set use kre to
-        for(int i=0;i<nums.length;i++){//3ms??
-            if(set.contains(nums[i])){//vaise set insert order maintain nhi krta ye linkedseth ye krta h no need 
-                continue;
-            }
-            else{
-                set.add(nums[i]);
-                nums[count]=nums[i];
-                count++;
+        if (nums.length == 0) return 0;
+
+        int i = 0; 
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
             }
         }
-        return count;
+        return i + 1; 
     }
 }

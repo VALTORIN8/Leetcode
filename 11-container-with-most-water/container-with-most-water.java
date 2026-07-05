@@ -1,26 +1,21 @@
 class Solution {
     public int maxArea(int[] height) {
-        int left = 0;
-        int right = height.length - 1;
-        int maxArea = 0;
-        
-        while (left < right) {
-            // Calculate current area
-            int width = right - left;
-            int currentHeight = Math.min(height[left], height[right]);
-            int currentArea = width * currentHeight;
-            
-            // Update max area
-            maxArea = Math.max(maxArea, currentArea);
-            
-            // Move the pointer with smaller height//why?
-            if (height[left] < height[right]) {
+        int left=0;
+        int right=height.length-1;
+        int maxarea=0;
+        while(left<right){
+            int currentarea=0;
+            int width=right-left;
+            int Height=Math.min(height[left],height[right]);//yha
+            currentarea=width*Height;//out of bounds ja rha
+            maxarea=Math.max(currentarea,maxarea);
+            if(height[left]<height[right]){
                 left++;
-            } else {
+            }
+            else{
                 right--;
             }
         }
-        
-        return maxArea;
+        return maxarea;
     }
 }

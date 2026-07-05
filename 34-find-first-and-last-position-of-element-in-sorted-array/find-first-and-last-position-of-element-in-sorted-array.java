@@ -41,5 +41,5 @@ class Solution {
         }
 
         return ans;
-    }//ohhhhhhhh//urri baba
-}//same nhi 1st last?///??wht///2/c fucomnents hai wha frk hai me kind of yhi try kr rha tha but maine while lagaya dusra isiliye time limit gyi
+    }
+}

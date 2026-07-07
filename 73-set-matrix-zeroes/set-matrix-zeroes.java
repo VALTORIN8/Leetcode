@@ -1,31 +1,27 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
-        //step 1: 2 for loop se row and collumn ko note krenge and use hashset me store krenge 
-        HashSet<Integer> rowid=new HashSet<>();
-        HashSet<Integer> columnid=new HashSet<>();
-        int m=matrix.length;
-        int n=matrix[0].length;
-
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(matrix[i][j]==0){
-                    rowid.add(i);//add?
-                    columnid.add(j);
+        int m = matrix.length;      // number of rows
+        int n = matrix[0].length;   // number of columns
+        
+        // Step 1: Create two arrays to mark rows and columns
+        boolean[] rows = new boolean[m];  // track which rows have zeros
+        boolean[] cols = new boolean[n];  // track which columns have zeros
+        
+        // Step 2: First pass - Find all zeros and mark
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(matrix[i][j] == 0) {
+                    rows[i] = true;  // mark row i
+                    cols[j] = true;  // mark column j
                 }
+            }//ye?
+        }//phele submit kara tah  ye
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(rows[i] || cols[j]) {
+                    matrix[i][j] = 0;
+                }
+            }
         }
-        }
-    
-        //}
-  for (int i : rowid) {
-    for (int j = 0; j < n; j++) {
-        matrix[i][j] = 0;
-    }
-}
-
-for (int j : columnid) {
-    for (int i = 0; i < m; i++) {
-        matrix[i][j] = 0;
-    }
-}
     }
 }

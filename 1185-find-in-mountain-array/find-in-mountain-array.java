@@ -12,7 +12,7 @@ Mil gaya?
    ↓         ↓
  Return   Binary Search Right (Descending)
                ↓        //78 cases pass leetcode ke nakhre honge ig 
-            Return / -1*///kha glti hui//right s
+            Return / -1*///kha glti hui//right side mei problem thi
             
             
 class Solution {
@@ -54,12 +54,12 @@ class Solution {
             int val=mountainArr.get(mid);
             if(val==target)
                 return mid;
-                
+           // Right side binary search ko descending ke hisaab se
             if(val<target){
-            right=mid-1;
-                
+            right=mid-1;//yha pr
+                //peak//sahi mai 
             }
-            else
+            else//kya tha hmm
             left=mid+1;
             }
         return -1;

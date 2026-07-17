@@ -1,13 +1,10 @@
 class Solution {
     public boolean isGood(int[] nums) {
-        Arrays.sort(nums);
-        for(int i=0;i<nums.length-1;i++){
-            if(nums[i]!=i+1)
-            return false;
+        int n=nums.length-1;
+        int sum = 0;
+        for(int i=0;i<nums.length;i++){
+            sum+=nums[i];
         }
-        if(nums[nums.length-1]!=nums.length-1)
-        return false;
-
-        return true;
+        return sum==(n*(n+1)/2)+n;
     }
 }

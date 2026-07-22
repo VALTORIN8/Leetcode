@@ -1,11 +1,11 @@
 class Solution {
     public int findNonMinOrMax(int[] nums) {
-        //no dikkat again likh denge
+        
         int n=nums.length;
-        if(n==2){
+        if(n<3){//wait
             return -1;
         }
-        int min=nums[0];
+       /*  int min=nums[0];
         int max=nums[0];
         for(int num:nums){
             if(num>max){
@@ -19,7 +19,10 @@ class Solution {
             if(nums[i]!=max && nums[i]!=min){
                 return nums[i];
             }
-        }
-        return -1;
+        } */
+        
+        Arrays.sort(nums);
+        
+        return nums[1];
     }
 }

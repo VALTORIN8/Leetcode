@@ -1,23 +1,16 @@
 class Solution {
     public int sumOfUnique(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(nums[i])) {
-                map.put(nums[i], map.get(nums[i]) + 1);
-            } else {
-                map.put(nums[i], 1);
-            }
-        }
-
-        int sum = 0;
-
-        for (int k = 0; k < nums.length; k++) {
-            if (map.get(nums[k]) == 1) {
-                sum += nums[k];
-            }
-        }
-
-        return sum;
+       int[]freq = new int[101];
+       for(int num:nums){
+        freq[num]++;
+       }
+       int sum = 0;
+       for(int num:nums){
+        if(freq[num]==1){
+        sum+=num;
+       }
     }
+    return sum;
 }
+}
+      

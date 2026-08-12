@@ -1,0 +1,15 @@
+class Solution {
+    public int countKDifference(int[] nums, int k) {
+        int pairs = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {/// likh yha n ki val
+                if (Math.abs(nums[i] - nums[j]) == k) {
+                    pairs++;
+                }
+            }
+        }
+
+            return pairs;
+        
+    }
+}

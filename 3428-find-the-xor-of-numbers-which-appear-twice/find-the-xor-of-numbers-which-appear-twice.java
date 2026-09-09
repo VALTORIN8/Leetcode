@@ -1,21 +1,16 @@
-import java.util.*;
-
 class Solution {
     public int duplicateNumbersXOR(int[] nums) {
+        int duplicate = 0;
 
-        HashSet<Integer> set = new HashSet<>();
-        int ans = 0;
-
-        for (int num : nums) {
-
-            if (set.contains(num)) {
-                ans = ans ^ num;
-            } 
-            else {
-                set.add(num);
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    duplicate = duplicate ^ nums[i];
+                    break;
+                }
             }
         }
 
-        return ans;
+        return duplicate;
     }
 }

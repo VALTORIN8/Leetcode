@@ -1,32 +1,29 @@
 class Solution {
     public int countCharacters(String[] words, String chars) {
-        int ans = 0;
+        
+        int freq[] = new int[26];
 
-        HashMap<Character, Integer> map = new HashMap<>();
-
-        // chars ke frequency store karo
-        for (char c : chars.toCharArray()) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
+        for(char ch : chars.toCharArray()){
+            freq[ch - 'a']++;
         }
 
-        for (String word : words) {
-            HashMap<Character, Integer> temp = new HashMap<>();
-            boolean possible = true;
+        int ans = 0;
+        for(String word: words){
+            int temp[] = freq.clone();
+            boolean good = true;
 
-            for (char c : word.toCharArray()) {
-                temp.put(c, temp.getOrDefault(c, 0) + 1);
-
-                if (!map.containsKey(c) || temp.get(c) > map.get(c)) {
-                    possible = false;
+            for(char ch: word.toCharArray()){
+                if(temp[ch-'a'] == 0){
+                    good = false;
                     break;
                 }
+                temp[ch-'a']--;
             }
 
-            if (possible) {
+            if(good){
                 ans += word.length();
             }
         }
-
         return ans;
     }
 }
